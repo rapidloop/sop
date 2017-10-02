@@ -1,0 +1,9 @@
+
+[[constraint]]
+  name = "github.com/prometheus/prometheus"
+  branch = "dev-2.0"
+
+[[constraint]]
+  name = "github.com/prometheus/client_golang"
+  branch = "master"
+
