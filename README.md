@@ -105,8 +105,8 @@ Use `^C` to exit.
 See [here](https://prometheus.io/docs/operating/configuration/#%3Cremote_write%3E)
 for documentation about Prometheus' remote storage configuration.
 
-If you want to build sop yourself, see the [sop-build](github.com/rapidloop/sop-build)
-repo.
+If you want to build sop yourself, see the
+[sop-build](https://github.com/rapidloop/sop-build) repo.
 
 ## Contributing
 
