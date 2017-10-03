@@ -68,12 +68,45 @@ These output destinations are implemented currently:
 
 sop is currently in beta (1.0-beta.1).
 
+Performance-wise, it can do sustained write rates of 13k+ samples/sec on a
+4-core 8GB DigitalOcean node, as measured using the `sopfilltest` tool.
+
 ## Getting Started
 
-> To be documented.
+sop is available as a zero-dependency, single-binary executable for 64-bit
+Linux platforms. Pre-built binaries are available as [GitHub releases](https://github.com/rapidloop/sop/releases);
+start off by downloading the latest release.
+
+sop is invoked with the path to a configuration file. You can generate the
+default configuration file from sop itself using the "-p" flag:
+
+```
+$ sop -p > sop.cfg
+```
+
+You can then edit the configuration file "sop.cfg" to setup inputs, APIs and
+outputs. The comments within the file should be self-explanatory. If not, ask!
+
+You can run sop by invoking it with the path to the configuration file:
+
+```
+$ sop sop.cfg
+2017/10/03 09:11:26.190018 main.go:77: sop starting: version=1.0-beta.1, pid=11333
+2017/10/03 09:11:26.653607 main.go:115: started database: path=data (took 463.453866ms)
+2017/10/03 09:11:26.653681 main.go:128: started storer: ttl=4m0s, downsample=0s
+2017/10/03 09:11:26.653729 main.go:141: started reaper: retain=4320h0m0s, gc=24h0m0s
+2017/10/03 09:11:26.654129 main.go:162: started input: prometheus v2 remote write (listen=0.0.0.0:9096)
+2017/10/03 09:11:26.654366 main.go:188: started api: prometheus_http (listen=0.0.0.0:9095)
+2017/10/03 09:11:26.654386 main.go:202: sop open for business
+```
+
+Use `^C` to exit.
 
 See [here](https://prometheus.io/docs/operating/configuration/#%3Cremote_write%3E)
 for documentation about Prometheus' remote storage configuration.
+
+If you want to build sop yourself, see the [sop-build](github.com/rapidloop/sop-build)
+repo.
 
 ## Contributing
 
