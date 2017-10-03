@@ -1,0 +1,84 @@
+sop - Multi-purpose metrics management tool 
+Copyright (c) 2017 RapidLoop, Inc.
+
+sop reuses and/or links against code the following open source components:
+
+
+github.com/prometheus/common
+Common libraries shared by Prometheus Go components.
+Apache 2.0 License
+Copyright 2015 The Prometheus Authors
+
+
+github.com/prometheus/client_golang
+Prometheus instrumentation library for Go applications
+Apache 2.0 License
+Copyright 2012-2015 The Prometheus Authors
+
+
+github.com/prometheus/prometheus
+The Prometheus systems and service monitoring server
+Apache 2.0 License
+Copyright 2012-2015 The Prometheus Authors
+
+
+github.com/influxdata/influxdb
+Scalable datastore for metrics, events, and real-time analytics
+MIT License
+Copyright (c) 2013-2016 Errplane Inc.
+
+
+github.com/golang/protobuf
+Go support for Google's protocol buffers 
+BSD 3-clause License
+Copyright 2010 The Go Authors. All rights reserved.
+
+
+github.com/golang/snappy
+The Snappy compression format in the Go programming language. 
+BSD 3-clause License
+Copyright (c) 2011 The Snappy-Go Authors. All rights reserved.
+
+
+github.com/nats-io/go-nats-streaming
+NATS Streaming System
+MIT License
+Copyright (c) 2016 Apcera Inc.
+
+
+github.com/BurntSushi/toml
+TOML parser for Golang with reflection.
+MIT License
+Copyright (c) 2013 TOML authors
+
+
+github.com/cenkalti/backoff
+The exponential backoff algorithm in Go (Golang).
+MIT License
+Copyright (c) 2014 Cenk Altı
+
+
+github.com/tecbot/gorocksdb
+gorocksdb is a Go wrapper for RocksDB
+MIT License
+Copyright (C) 2016 Thomas Adam
+
+
+github.com/mdevan/httprouter
+Fork of julienschmidt/httprouter that uses regular http.HandlerFunc handlers.
+BSD 3-clause License
+Copyright (c) 2013 Julien Schmidt. All rights reserved.
+
+
+golang.org/x/tools
+Go Tools
+BSD 3-clause License
+Copyright (c) 2009 The Go Authors. All rights reserved.
+
+
+rocksdb.org
+A library that provides an embeddable, persistent key-value store for fast storage.
+Apache 2.0 License
+Copyright (c) 2016-present, Facebook, Inc.
+BSD 3-clause License
+Copyright (c) 2011 The LevelDB Authors. All rights reserved.

@@ -1,3 +1,17 @@
+// Copyright 2017 RapidLoop, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package main
 
 import (
@@ -19,7 +33,7 @@ var (
 	flagFillType    = flag.String("t", "random", "values to fill one of 'random', or 'zero'")
 	flagInterval    = flag.Duration("i", time.Minute, "simulated collection interval")
 	flagDims        = flag.Uint("m", 5, "dimensions per series")
-	flagURL         = flag.String("url", "http://localhost:9201/", "sop's prometheus remote write endpoint")
+	flagURL         = flag.String("url", "http://localhost:9096/", "sop's prometheus remote write endpoint")
 )
 
 var (
@@ -66,7 +80,7 @@ func main() {
 			count++
 		}
 		t = t.Add(*flagInterval)
-		if count/onePC != quotient {
+		if onePC != 0 && count/onePC != quotient {
 			quotient = count / onePC
 			fmt.Printf("%d%%", quotient)
 		}

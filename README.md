@@ -77,7 +77,7 @@ for documentation about Prometheus' remote storage configuration.
 
 ## Contributing
 
-sop is released under Apache 2.0 license, copyright RapidLoop, Inc.
+sop is released under Apache 2.0 license, copyright (c) 2017 RapidLoop, Inc.
 
 sop is written in Go. Data is stored in RocksDB. It reuses parts of Prometheus,
 especially PromQL. The build scripts are maintained separately in the
