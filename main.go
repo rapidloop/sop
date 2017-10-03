@@ -16,9 +16,10 @@ import (
 	"github.com/rapidloop/sop/sopdb/rdb"
 )
 
-const VERSION = "1.0-beta1"
-
-var config model.Config
+var (
+	VERSION = "1.0-beta.1" // overridden by build script
+	config  model.Config
+)
 
 func main() {
 	if len(os.Args) != 2 {
