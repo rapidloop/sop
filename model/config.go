@@ -117,8 +117,8 @@ func PrintExampleConfig() {
 }
 
 const exampleConfig = `
-# This is the default configuration file for sop. For full documentation,
-# refer https://github.com/rapidloop/sop/wiki.
+# This is the default configuration file for sop. For more information see
+# https://github.com/rapidloop/sop.
 
 
 #-------------------------------------------------------------------------------
@@ -162,8 +162,8 @@ retention_gc_hours = 24
 # example of each is shown below.
 #
 # Filters can be used to select a subset of the incoming data to be stored.
-# Use an "exclude" filter to accept all but the specified metrics selectors.
-# Use an "include" filter to accept only the specified metrics selectors.
+# Use an "exclude" filter to accept *all but the* specified metrics selectors.
+# Use an "include" filter to accept *only the* specified metrics selectors.
 # Only an include or an exclude filter may be specified for an input, not both.
 # A metric selector is a string like 'foo{env=~"staging|testing|development"}'.
 
@@ -195,13 +195,11 @@ listen = "0.0.0.0:9096"
 #-------------------------------------------------------------------------------
 # API
 #-------------------------------------------------------------------------------
-# API configuration.
-# There can be any number of "input" sections. Each input section will create
-# an input handler of a specific type.
 # Enable APIs to query the data stored in sop.
 
 # The prometheus_http API provides interfaces for Grafana and Prometheus
-# federation.
+# federation. 'federation_labels' are extra labels added only to the metrics
+# returned by the '/federate' endpoint.
 [[api]]
 type = "prometheus_http"
 listen = "0.0.0.0:9095"
@@ -215,10 +213,10 @@ federation_labels = {generator="sop",foo="bar"}
 # internally).
 
 # [[output]]
-# type = "influxdb"             # required
+# type = "influxdb"
 # address = "localhost:8086"    # required
 # protocol = "http"             # required, one of: http, https, udp
-# database = "prometheus"
+# database = "prometheus"       # required
 # retention_policy = ""
 # username = "foo"
 # password = "bar"
@@ -228,17 +226,17 @@ federation_labels = {generator="sop",foo="bar"}
 # [[output]]
 # type = "nats_streaming"
 # nats_url = ""      # required, e.g. nats://127.0.0.1:4222
-# stan_cluster = ""  # required
-# stan_clientid = "" # required
-# subject = ""       # required
+# stan_cluster = ""  # required, must match what was passed to nats-streaming-server
+# stan_clientid = "" # required, a name unique among all clients of this cluster
+# subject = ""       # required, match to another sop's input
 
 # [[output]]
 # type = "prometheusv2_remote_write"
-# url = "http://10.11.12.13:9096/write"
-# timeout_secs = 5   # optional, defaults to 5
+# url = "http://10.11.12.13:9096/write"  # required
+# timeout_secs = 5
 
 # [[output]]
 # type = "opentsdb"
-# url = "http://10.11.12.13:4242/"
-# timeout_secs = 5   # optional, defaults to 5
+# url = "http://127.0.0.1:4242/"   # required
+# timeout_secs = 5
 `
